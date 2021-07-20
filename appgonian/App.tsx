@@ -9,112 +9,48 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { Image, View, StyleSheet, Text } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { colors } from './src/utils/theme';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
 
-const Section: React.FC<{
-  title: string;
-}> = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={styles.mainContainer}>
+      <View style={styles.smallContainer}>
+        <Text style={styles.text}>Curso Patagonian</Text>
+      </View>
+      <Image
+        source={{
+          uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
+        }}
+        style={styles.image}
+      />
     </View>
   );
 };
 
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
-        <Header />
-        <Text style={styles.hello}> Hello there </Text>
-        <View style={{ backgroundColor: isDarkMode ? Colors.black : Colors.white }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More"> Read the docs to discover what to do next: </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-    backgroundColor: 'whitesmoke',
+  mainContainer: {
+    alignItems: 'center',
+    backgroundColor: colors.darkColor,
+    flex: 1,
+    justifyContent: 'center',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    backgroundColor: 'pink',
-    borderRadius: 5,
-    borderWidth: 0.5,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    backgroundColor: 'lightgray',
+  smallContainer: {
+    backgroundColor: colors.lighterColor,
     borderRadius: 5,
   },
-  highlight: {
-    fontWeight: '700',
-    color: 'lightblue',
-  },
-  hello: {
-    fontSize: 40,
-    color: 'gray',
+  text: {
+    fontSize: 30,
     fontFamily: 'monospace',
-    textAlign: 'center',
+    color: 'black',
+    margin: 4,
+  },
+  image: {
+    height: DEVICE_HEIGHT / 3,
+    marginTop: 5,
+    width: DEVICE_WIDTH,
   },
 });
 
