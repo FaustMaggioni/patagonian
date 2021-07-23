@@ -31,7 +31,7 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showAlert} text="texto" />
+      <DefaultButton onPress={showAlert} label="texto" />
     </View>
   );
 };

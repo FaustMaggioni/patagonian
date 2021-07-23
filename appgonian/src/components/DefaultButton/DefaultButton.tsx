@@ -1,18 +1,27 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 
 interface Props {
-  onPress: () => void;
-  text: string;
+   onPress: () => void;
+   label: string;
+   color: string,
 };
 
-const DefaultButton = ({ onPress, text }: Props) => {
-  return (
-    <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
-      <Text style={styles.textContainer}> {text} </Text>
-    </TouchableOpacity>
-  );
+const DefaultButton = ({ onPress, label, color }: Props) => {
+   return (
+      <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
+         <Text style={styles.textContainer}> {label} </Text>
+      </TouchableOpacity>
+   );
 };
+
+const createStyles = (color:string) => ( //PREGUNTAR
+  StyleSheet.create({
+     boton:{
+        backgroundColor: {color},
+     },
+  });
+)
 
 export default DefaultButton;
