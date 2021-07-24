@@ -9,7 +9,7 @@ interface Props {
 
 const DefaultButton = ({ onPress, label }: Props) => {
    return (
-      <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
+      <TouchableOpacity onPress={onPress} color='red' style={styles.mainContainer}>
          <Text style={styles.textContainer}> {label} </Text>
       </TouchableOpacity>
    );
