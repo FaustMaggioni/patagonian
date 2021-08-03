@@ -1,22 +1,22 @@
 import { StyleSheet } from 'react-native';
-import { colors } from './src/utils/theme';
+import { COLORS } from './src/utils/theme';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
 
 const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
-    backgroundColor: colors.lightColor,
     flex: 1,
+    backgroundColor: 'transparent',
     justifyContent: 'center',
   },
   smallContainer: {
-    backgroundColor: colors.mainColor,
+    backgroundColor: COLORS.mainColor,
     borderRadius: 5,
   },
   text: {
     fontSize: 30,
     fontFamily: 'monospace',
-    color: 'black',
+    color: COLORS.black,
     margin: 4,
   },
   image: {

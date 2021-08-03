@@ -1,18 +1,33 @@
+/* eslint-disable prettier/prettier */
 import { StyleSheet } from 'react-native';
-import { colors } from '../../utils/theme';
+import { COLORS } from '../../utils/theme';
 
 const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
-    backgroundColor: colors.lighterColor,
     borderRadius: 10,
     height: 50,
     justifyContent: 'center',
     width: '80%',
-},
-  textContainer:{
+  },
+  textContainer: {
     fontSize: 20,
-},
+  },
+  primary: {
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.darkerColor,
+    borderWidth: 0.5,
+  },
+  secondary: {
+    backgroundColor: COLORS.black,
+    borderColor: COLORS.lightColor,
+    borderWidth: 1,
+  },
 });
+
+export const buttonTextColors = {
+  primary: COLORS.darkerColor,
+  secondary: COLORS.lightColor,
+};
 
 export default styles;

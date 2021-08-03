@@ -8,15 +8,21 @@
  * @format
  */
 
-import React from 'react';
-import { Image, View, Text, Alert } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Text, View } from 'react-native';
 
-import { DefaultButton } from './src/components';
+import { DefaultButton, DefaultAlert } from './src/components';
 import styles from './mainStyles';
 
 const App = () => {
-  const showAlert = () => {
-    Alert.alert('Hola');
+  const [isModalVisible, setModalVisible] = useState(true);
+
+  const showModal = () => {
+    setModalVisible(true);
+  };
+
+  const hideModal = () => {
+    setModalVisible(false);
   };
 
   return (
@@ -31,7 +37,13 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showAlert} label="texto" />
+      <DefaultButton
+        additionalStyle={styles.text}
+        text="Mostrar Hola Mundo"
+        onPress={showModal}
+        variant="primary"
+      />
+      <DefaultAlert hideModal={hideModal} title="" subtitle="" visible={isModalVisible} />
     </View>
   );
 };
