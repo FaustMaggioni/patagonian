@@ -9,9 +9,10 @@
  */
 
 import React, { useState } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 
-import { DefaultButton, DefaultAlert } from './src/components';
+import { DefaultButton, DefaultAlert, Typography } from './src/components';
+import { COLORS } from './src/utils/theme';
 import styles from './mainStyles';
 
 const App = () => {
@@ -28,8 +29,9 @@ const App = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.smallContainer}>
-        <Text style={styles.text}> Curso Patagonian </Text>
+        <Typography color={COLORS.mainColor}> Curso Patagonian </Typography>
       </View>
+      <Typography> Hello there </Typography>
       <Image
         source={{
           uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
@@ -43,7 +45,15 @@ const App = () => {
         onPress={showModal}
         variant="primary"
       />
-      <DefaultAlert hideModal={hideModal} title="" subtitle="" visible={isModalVisible} />
+      <DefaultAlert
+        onPressPrimaryButton={hideModal}
+        //onPressSecondaryButton={hideModal}
+        primaryButtonText="OK"
+        title="Hola Mundo"
+        secondaryButtontext="Cancelar"
+        subtitle=""
+        visible={isModalVisible}
+      />
     </View>
   );
 };

@@ -7,15 +7,6 @@ const styles = StyleSheet.create({
   buttonStyles: {
     height: 40,
   },
-  text: {
-    marginVertical: 30,
-  },
-  mainContainer: {
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    flex: 1,
-    justifyContent: 'center',
-  },
   innerContainer: {
     alignItems: 'center',
     backgroundColor: COLORS.white,
@@ -25,5 +16,20 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     width: DEVICE_WIDTH * 0.65,
   },
+  mainContainer: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  primaryButtonStyles: {
+    backgroundColor: 'cyan',
+  },
+  text: {
+    color: COLORS.mainColor,
+    fontSize: 20,
+    marginVertical: 30,
+  },
+  secondaryButtonStyles: {},
 });
 export default styles;

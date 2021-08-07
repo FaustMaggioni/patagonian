@@ -19,15 +19,15 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
   },
   secondary: {
-    backgroundColor: COLORS.black,
-    borderColor: COLORS.lightColor,
+    backgroundColor: COLORS.darkerColor,
+    borderColor: COLORS.white,
     borderWidth: 1,
   },
 });
 
 export const buttonTextColors = {
   primary: COLORS.darkerColor,
-  secondary: COLORS.lightColor,
+  secondary: COLORS.white,
 };
 
 export default styles;

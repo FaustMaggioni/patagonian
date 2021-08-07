@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Text, TouchableOpacity, ViewStyle } from 'react-native';
+import { TouchableOpacity, ViewStyle } from 'react-native';
 import styles, { buttonTextColors } from './styles';
+import Typography from '../Typography';
 
 interface Props {
-  additionalStyle?: ViewStyle;
+  additionalStyle?: ViewStyle[] | ViewStyle;
   text: string;
   onPress: () => void;
   variant?: 'primary' | 'secondary';
@@ -17,7 +18,7 @@ const DefaultButton = ({ additionalStyle, onPress, text, variant = 'primary' }: 
       onPress={onPress}
       style={[styles.mainContainer, styles[variant], additionalStyle]}
     >
-      <Text style={[styles.textContainer, { color: buttonTextColors[variant] }]}>{upperText}</Text>
+      <Typography color={buttonTextColors[variant]}> {upperText} </Typography>
     </TouchableOpacity>
   );
 };

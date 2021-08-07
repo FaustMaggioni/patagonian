@@ -15,9 +15,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontFamily: 'monospace',
-    color: COLORS.black,
+    color: COLORS.white,
     margin: 4,
+    textAlign: 'center',
+    width: DEVICE_WIDTH * 0.8,
   },
   image: {
     height: DEVICE_HEIGHT / 3,
