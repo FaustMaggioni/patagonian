@@ -1,31 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { DEVICE_WIDTH } from '../../utils/dimensions';
+import { View } from 'react-native';
 
 interface Props {
-  height?: number;
+  isHorizontal?: boolean;
+  size: number;
 }
 
-const getSeparatorHeight = ({ height }: Props) => {
-  const separatorHeight = {
-    height,
-  };
-  return separatorHeight;
-};
-
-const Separator = ({ height = 5 }: Props) => {
-  const separatorHeight = getSeparatorHeight({ height });
-  return <View style={[styles.separator, separatorHeight]} />;
+const Separator = ({ isHorizontal, size }: Props) => {
+  console.log('size: ', size);
+  return <View style={isHorizontal ? { height: size } : { width: size }} />;
 };
 
 Separator.defaultProps = {
-  height: 10,
+  isHorizontal: true,
 };
-
-const styles = StyleSheet.create({
-  separator: {
-    width: DEVICE_WIDTH,
-  },
-});
 
 export default Separator;

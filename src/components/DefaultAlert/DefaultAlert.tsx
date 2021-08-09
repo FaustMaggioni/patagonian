@@ -36,7 +36,7 @@ const DefaultAlert = ({
             <DefaultButton
               onPress={onPressSecondaryButton}
               text={secondaryButtontext}
-              additionalStyle={[styles.buttonStyles, styles.secondaryButtonStyles]}
+              additionalStyle={styles.buttonStyles}
               variant="secondary"
             />
           ) : null}

@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: COLORS.lighterColor,
   },
-  mainContainer: {
+  scrollContainer: {
     alignItems: 'center',
-    flex: 1,
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
     paddingBottom: 30,
+  },
+  mainContainer: {
+    flex: 1,
     width: '100%',
   },
   smallContainer: {
@@ -21,12 +21,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: COLORS.white,
-    margin: 4,
     width: DEVICE_WIDTH * 0.8,
   },
   image: {
+    borderRadius: 10,
     height: DEVICE_HEIGHT / 3,
-    marginVertical: 5,
     width: DEVICE_WIDTH,
   },
 });

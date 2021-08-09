@@ -11,7 +11,7 @@
 import React, { useState } from 'react';
 import { Image, SafeAreaView, ScrollView, View } from 'react-native';
 
-import { DefaultButton, DefaultAlert, Typography } from './src/components';
+import { DefaultButton, DefaultAlert, Typography, Separator } from './src/components';
 import { COLORS } from './src/utils/theme';
 import styles from './mainStyles';
 
@@ -28,42 +28,31 @@ const App = () => {
 
   return (
     <>
-      <SafeAreaView style={styles.background} />
-      <ScrollView contentContainerStyle={[styles.mainContainer, styles.background]}>
+      <SafeAreaView style={styles.mainContainer} />
+      <ScrollView contentContainerStyle={styles.scrollContainer} style={styles.background}>
         <View style={styles.smallContainer}>
-          <Typography color={COLORS.white} size={30} variant="bold">
+          <Typography align="center" color={COLORS.white} size={30} variant="bold">
             Curso Patagonian
           </Typography>
         </View>
-        <Typography size={20}> Hello there </Typography>
-        <Image
-          source={{
-            uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
-          }}
-          style={styles.image}
-          resizeMode="contain"
-        />
-        <Image
-          source={{
-            uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
-          }}
-          style={styles.image}
-          resizeMode="contain"
-        />
-        <Image
-          source={{
-            uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
-          }}
-          style={styles.image}
-          resizeMode="contain"
-        />
-        <Image
-          source={{
-            uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
-          }}
-          style={styles.image}
-          resizeMode="contain"
-        />
+        <Typography size={30} variant="medium">
+          Hello there
+        </Typography>
+        {[0, 1, 2, 3, 4].map((item) => {
+          return (
+            <>
+              <Image
+                key={item}
+                source={{
+                  uri: 'https://3.bp.blogspot.com/-JfL1o7oSnKI/VmodObHF9cI/AAAAAAAABLY/nKKRXw0-yiU/s1600/homero_456_336.jpg',
+                }}
+                style={styles.image}
+                resizeMode="contain"
+              />
+              <Separator size={25} />
+            </>
+          );
+        })}
         <DefaultButton
           additionalStyle={styles.text}
           text="Mostrar Hola Mundo"

@@ -20,15 +20,13 @@ const DefaultButton = ({
   variant = 'primary',
 }: Props) => {
   const upperText = text.toUpperCase();
-  console.log('size de : ', text, fontSize);
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[styles.mainContainer, styles[variant], additionalStyle]}
     >
       <Typography align="center" color={buttonTextColors[variant]} size={fontSize} variant="medium">
-        {' '}
-        {upperText}{' '}
+        {upperText}
       </Typography>
     </TouchableOpacity>
   );

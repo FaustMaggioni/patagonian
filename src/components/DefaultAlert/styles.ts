@@ -5,15 +5,13 @@ import { COLORS } from '../../utils/theme';
 
 const styles = StyleSheet.create({
   buttonStyles: {
-    height: 40,
+    minHeight: 40,
   },
   innerContainer: {
     alignItems: 'center',
     backgroundColor: COLORS.white,
     borderRadius: 13,
     justifyContent: 'center',
-    paddingTop: 10,
-    paddingBottom: 20,
     width: DEVICE_WIDTH * 0.65,
   },
   mainContainer: {
@@ -22,7 +20,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  primaryButtonStyles: {},
-  secondaryButtonStyles: {},
 });
 export default styles;
