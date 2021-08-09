@@ -22,14 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  primaryButtonStyles: {
-    backgroundColor: 'cyan',
-  },
-  text: {
-    color: COLORS.mainColor,
-    fontSize: 20,
-    marginVertical: 30,
-  },
+  primaryButtonStyles: {},
   secondaryButtonStyles: {},
 });
 export default styles;

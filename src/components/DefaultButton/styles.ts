@@ -6,12 +6,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
     borderRadius: 10,
-    height: 50,
+    minWidth: 15,
+    paddingVertical: 2,
+    paddingHorizontal: 10,
     justifyContent: 'center',
-    width: '80%',
-  },
-  textContainer: {
-    fontSize: 20,
   },
   primary: {
     backgroundColor: COLORS.white,

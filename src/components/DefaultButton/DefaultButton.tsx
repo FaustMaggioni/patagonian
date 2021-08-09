@@ -8,23 +8,35 @@ interface Props {
   additionalStyle?: ViewStyle[] | ViewStyle;
   text: string;
   onPress: () => void;
+  fontSize?: number;
   variant?: 'primary' | 'secondary';
 }
 
-const DefaultButton = ({ additionalStyle, onPress, text, variant = 'primary' }: Props) => {
+const DefaultButton = ({
+  additionalStyle,
+  onPress,
+  text,
+  fontSize = 20,
+  variant = 'primary',
+}: Props) => {
   const upperText = text.toUpperCase();
+  console.log('size de : ', text, fontSize);
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[styles.mainContainer, styles[variant], additionalStyle]}
     >
-      <Typography color={buttonTextColors[variant]}> {upperText} </Typography>
+      <Typography align="center" color={buttonTextColors[variant]} size={fontSize} variant="medium">
+        {' '}
+        {upperText}{' '}
+      </Typography>
     </TouchableOpacity>
   );
 };
 
 DefaultButton.defaultProps = {
   additionalStyle: {},
+  fontSize: 20,
   variant: 'primary',
 };
 

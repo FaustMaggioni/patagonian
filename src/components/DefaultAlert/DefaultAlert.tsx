@@ -29,13 +29,9 @@ const DefaultAlert = ({
     <Modal animationType="fade" transparent visible={visible}>
       <View style={[styles.mainContainer, additionalStyle]}>
         <View style={styles.innerContainer}>
-          <Typography>{title}</Typography>
-          {subtitle && <Typography> {subtitle} </Typography>}
-          <DefaultButton
-            additionalStyle={[styles.buttonStyles, styles.primaryButtonStyles]}
-            onPress={onPressPrimaryButton}
-            text={primaryButtonText}
-          />
+          <Typography size={20}>{title}</Typography>
+          {subtitle ? <Typography> {subtitle} </Typography> : null}
+          <DefaultButton onPress={onPressPrimaryButton} text={primaryButtonText} />
           {secondaryButtontext && onPressSecondaryButton ? (
             <DefaultButton
               onPress={onPressSecondaryButton}
