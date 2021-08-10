@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, View, ViewStyle } from 'react-native';
 import DefaultButton from '../DefaultButton';
 import Typography from '../Typography';
+import Separator from '../Separator';
 import styles from './styles';
 
 interface Props {
@@ -40,6 +41,7 @@ const DefaultAlert = ({
               variant="secondary"
             />
           ) : null}
+          <Separator size={10} />
         </View>
       </View>
     </Modal>

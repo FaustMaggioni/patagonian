@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { COLORS } from './src/utils/theme';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
+import { COLORS } from '../../utils/theme';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../utils/dimensions';
 
 const styles = StyleSheet.create({
   background: {
